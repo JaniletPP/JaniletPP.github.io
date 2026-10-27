@@ -4,359 +4,904 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portafolio profesional de desarrollo web, programación y soporte tecnológico.">
-  <title>Portafolio | Desarrolladora Web</title>
+  <meta name="description" content="Portafolio profesional de Janilet Pérez Pérez, desarrolladora de software, desarrolladora web y técnica de soporte TI.">
+  <title>Janilet Pérez | Portafolio</title>
 
   <style>
     :root {
-      --azul: #2563eb;
-      --oscuro: #172033;
-      --gris: #64748b;
-      --fondo: #f7f9fc;
-      --blanco: #ffffff;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --dark: #111827;
+      --text: #374151;
+      --muted: #6b7280;
+      --background: #f8fafc;
+      --white: #ffffff;
+      --border: #e5e7eb;
+      --light-blue: #eff6ff;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--fondo);
-      color: var(--oscuro);
+      background: var(--background);
+      color: var(--text);
       line-height: 1.7;
     }
 
     a {
+      color: inherit;
       text-decoration: none;
     }
 
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+    }
+
     nav {
+      min-height: 72px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 8%;
-      background: var(--blanco);
-      border-bottom: 1px solid #e5eaf2;
-    }
-
-    .logo {
-      font-size: 20px;
-      font-weight: bold;
-      color: var(--azul);
-    }
-
-    nav a {
-      color: var(--oscuro);
-      margin-left: 20px;
-      font-size: 14px;
-    }
-
-    .hero {
-      max-width: 1100px;
-      margin: auto;
-      padding: 90px 24px 75px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 50px;
-    }
-
-    .hero-text {
-      flex: 1;
-    }
-
-    .tag {
-      color: var(--azul);
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    h1 {
-      font-size: clamp(36px, 5vw, 55px);
-      line-height: 1.15;
-      margin: 18px 0;
-      letter-spacing: -1.5px;
-    }
-
-    h1 span {
-      color: var(--azul);
-    }
-
-    .hero p {
-      color: var(--gris);
-      max-width: 590px;
-      margin-bottom: 25px;
-    }
-
-    .photo {
-      width: 260px;
-      height: 310px;
-      object-fit: cover;
-      object-position: center top;
-      border-radius: 24px;
-      background: #e1e9f8;
-      border: 6px solid var(--blanco);
-      box-shadow: 0 15px 40px #17203318;
-    }
-
-    .button {
-      display: inline-block;
-      background: var(--azul);
-      color: white;
-      padding: 12px 20px;
-      border-radius: 9px;
-      font-weight: bold;
-      margin: 5px 8px 5px 0;
-    }
-
-    .button.secondary {
-      background: white;
-      color: var(--azul);
-      border: 1px solid #cbd5e1;
-    }
-
-    section {
-      padding: 65px 24px;
-      scroll-margin-top: 25px;
-    }
-
-    .section-inner {
-      max-width: 1050px;
-      margin: auto;
-    }
-
-    .section-title {
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-    .section-intro {
-      color: var(--gris);
-      margin-bottom: 30px;
-    }
-
-    .white-section {
-      background: white;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 24px;
     }
 
-    .card {
-      padding: 26px;
+    .logo {
+      color: var(--dark);
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      list-style: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .hero {
+      padding: 100px 0 90px;
+      background:
+        radial-gradient(circle at 90% 15%, #dbeafe 0, transparent 30%),
+        linear-gradient(135deg, #ffffff, #f1f5f9);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: #dbeafe;
+      color: var(--primary-dark);
+      padding: 7px 13px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      color: var(--dark);
+      font-size: clamp(2.5rem, 5vw, 4.4rem);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    h1 span {
+      color: var(--primary);
+    }
+
+    .hero-description {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border-radius: 9px;
+      background: var(--primary);
+      color: white;
+      font-weight: 700;
+      border: 1px solid var(--primary);
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
       background: white;
-      border: 1px solid #e5eaf2;
+      color: var(--dark);
+      border-color: var(--border);
+    }
+
+    .button-outline:hover {
+      background: var(--light-blue);
+      color: var(--primary-dark);
+    }
+
+    .profile-card {
+      background: white;
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+      text-align: center;
+    }
+
+    .profile-placeholder {
+      width: 145px;
+      height: 145px;
+      margin: 0 auto 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--light-blue);
+      border: 4px solid #dbeafe;
+      color: var(--primary);
+      font-size: 2.8rem;
+      font-weight: 800;
+    }
+
+    .profile-card h2 {
+      color: var(--dark);
+      font-size: 1.35rem;
+      margin-bottom: 5px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .availability {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 7px 12px;
+      border-radius: 50px;
+      background: #dcfce7;
+      color: #166534;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 82px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 38px;
+    }
+
+    .section-label {
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 800;
+      font-size: 0.8rem;
+    }
+
+    h2.section-title {
+      color: var(--dark);
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      line-height: 1.2;
+      margin: 10px 0 14px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 35px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
       border-radius: 16px;
-      box-shadow: 0 8px 24px #17203308;
-    }
-
-    .white-section .card {
-      background: var(--fondo);
-    }
-
-    .project-number {
-      color: var(--azul);
-      font-weight: bold;
-      font-size: 13px;
+      padding: 28px;
     }
 
     .card h3 {
-      margin: 10px 0;
-      font-size: 21px;
+      color: var(--dark);
+      font-size: 1.15rem;
+      margin-bottom: 14px;
     }
 
-    .card p {
-      color: var(--gris);
+    .education-item {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .education-item:last-child {
+      border-bottom: 0;
+    }
+
+    .education-item strong {
+      color: var(--dark);
+      display: block;
+    }
+
+    .education-item span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .experience {
+      display: grid;
+      gap: 22px;
+    }
+
+    .experience-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      position: relative;
+    }
+
+    .experience-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 15px;
+      flex-wrap: wrap;
       margin-bottom: 16px;
     }
 
-    .skills {
+    .experience-card h3 {
+      color: var(--dark);
+      font-size: 1.25rem;
+    }
+
+    .company {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .date {
+      background: var(--light-blue);
+      color: var(--primary-dark);
+      padding: 5px 10px;
+      border-radius: 7px;
+      font-size: 0.83rem;
+      font-weight: 700;
+    }
+
+    .experience-card ul {
+      padding-left: 22px;
+      margin-top: 12px;
+    }
+
+    .experience-card li {
+      margin: 7px 0;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 30px;
+      transition: 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.07);
+    }
+
+    .project-number {
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+    }
+
+    .project-card h3 {
+      color: var(--dark);
+      font-size: 1.3rem;
+      margin: 12px 0;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
+      margin: 0 0 24px;
     }
 
-    .skill {
-      background: #eaf1ff;
-      color: #214eb5;
-      padding: 8px 13px;
-      border-radius: 8px;
-      font-size: 14px;
+    .tag {
+      background: #f1f5f9;
+      color: #334155;
+      border-radius: 6px;
+      padding: 5px 9px;
+      font-size: 0.78rem;
+      font-weight: 700;
     }
 
-    .contact-box {
-      background: #edf3ff;
-      padding: 32px;
-      border-radius: 18px;
+    .project-card .button {
+      align-self: flex-start;
+      margin-top: auto;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 25px;
+    }
+
+    .skill-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: var(--light-blue);
+      border-radius: 12px;
+      color: var(--primary);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .skill-card h3 {
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .contact-section {
+      background: #111827;
+      color: white;
+    }
+
+    .contact-section .section-title {
+      color: white;
+    }
+
+    .contact-section .section-heading p {
+      color: #cbd5e1;
+    }
+
+    .contact-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      padding: 30px;
+      border: 1px solid #374151;
+      border-radius: 16px;
+      background: #1f2937;
+    }
+
+    .contact-card h3 {
+      margin-bottom: 7px;
+    }
+
+    .contact-card p {
+      color: #cbd5e1;
+      overflow-wrap: anywhere;
     }
 
     footer {
+      padding: 25px 0;
+      background: #0b1120;
+      color: #9ca3af;
       text-align: center;
-      padding: 25px;
-      color: var(--gris);
-      font-size: 13px;
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 700px) {
-      nav {
-        padding: 18px 5%;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      nav a {
-        margin: 0 10px 0 0;
+    @media (max-width: 800px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
       }
 
       .hero {
-        flex-direction: column-reverse;
+        padding: 65px 0;
+      }
+
+      .profile-card {
+        max-width: 420px;
+        margin: auto;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 0.82rem;
+      }
+
+      nav {
+        padding: 15px 0;
         align-items: flex-start;
-        padding-top: 45px;
+        flex-direction: column;
       }
+    }
 
-      .photo {
-        width: 190px;
-        height: 220px;
-      }
-
-      .projects {
+    @media (max-width: 540px) {
+      .projects-grid,
+      .skills-grid {
         grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .experience-card,
+      .project-card,
+      .card {
+        padding: 22px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
       }
     }
   </style>
 </head>
 
 <body>
+  <header>
+    <nav class="container" aria-label="Navegación principal">
+      <a href="#inicio" class="logo">Janilet<span>.</span></a>
 
-  <nav>
-    <a href="#" class="logo">Mi portafolio.</a>
-    <div>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#habilidades">Habilidades</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-  </nav>
-
-  <header class="hero" id="sobre-mi">
-    <div class="hero-text">
-      <span class="tag">PORTAFOLIO PROFESIONAL</span>
-      <h1>Hola, soy una <span>desarrolladora web.</span></h1>
-
-      <p>
-        Ingeniera en Desarrollo y Gestión de Software con experiencia
-        en desarrollo de páginas web, programación, bases de datos,
-        soporte técnico e impartición de cursos de informática.
-        Me interesa crear soluciones tecnológicas útiles y seguir
-        creciendo profesionalmente.
-      </p>
-
-      <a class="button" href="#proyectos">Ver mis proyectos</a>
-      <a class="button secondary" href="#contacto">Contactarme</a>
-    </div>
-
-    <img
-      class="photo"
-      src="foto-profesional.jpg"
-      alt="Fotografía profesional"
-    >
+      <ul class="nav-links">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section id="proyectos" class="white-section">
-    <div class="section-inner">
-      <h2 class="section-title">Mis proyectos</h2>
-      <p class="section-intro">
-        Algunos de los proyectos que quiero compartir.
-      </p>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Desarrollo de software · Soporte TI</span>
 
-      <div class="projects">
-        <article class="card">
-          <span class="project-number">PROYECTO 01</span>
-          <h3>Sistema de punto de venta web</h3>
-          <p>
-            Aplicación web de punto de venta. Consulta la demostración
-            para conocer el sistema y sus funcionalidades.
+          <h1>
+            Hola, soy<br>
+            <span>Janilet Pérez.</span>
+          </h1>
+
+          <p class="hero-description">
+            Ingeniera en Desarrollo y Gestión de Software, con experiencia
+            en desarrollo web, soporte técnico, implementación de sistemas
+            y capacitación de usuarios. Me gusta resolver problemas,
+            aprender nuevas tecnologías y crear soluciones útiles.
           </p>
-          <a class="button"
-             href="https://punto-venta-web.onrender.com/Login"
-             target="_blank" rel="noopener noreferrer">
-            Ver proyecto ↗
-          </a>
-        </article>
 
-        
-          <span class="project-number">PROYECTO 02</span>
-          <h3>Reloj checador — Tecnología SIE</h3>
+          <div class="buttons">
+            <a class="button" href="#proyectos">Ver mis proyectos ↗</a>
+            <a class="button button-outline" href="#contacto">Contactarme</a>
+          </div>
+        </div>
+
+        <aside class="profile-card">
+          <!-- Para agregar tu foto, consulta las instrucciones debajo del código. -->
+          <div class="profile-placeholder" aria-label="Iniciales JP">JP</div>
+          <h2>Janilet Pérez Pérez</h2>
+          <p>Desarrolladora de software y técnica de soporte TI</p>
+          <span class="availability">Disponible para oportunidades laborales</span>
+        </aside>
+      </div>
+    </section>
+
+    <section id="sobre-mi">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Conóceme</span>
+          <h2 class="section-title">Sobre mí</h2>
           <p>
-            Sitio web relacionado con soluciones de control de asistencia
-            para empresas, incluyendo relojes checadores, dispositivos
-            biométricos y software de asistencia.
+            Formación en desarrollo de software y experiencia práctica
+            trabajando con aplicaciones web, equipos tecnológicos y usuarios.
           </p>
-          <a class="button"
-             href="https://tecnologiasie.com/html/reloj.html"
-             target="_blank" rel="noopener noreferrer">
-            Visitar sitio web ↗
-          </a>
+        </div>
 
-        </article>
+        <div class="about-grid">
+          <article class="card">
+            <h3>Mi perfil profesional</h3>
+            <p>
+              Cuento con experiencia en mantenimiento y desarrollo de páginas
+              web, pruebas funcionales, configuración de equipos, soporte
+              remoto y presencial, e implementación de soluciones tecnológicas.
+              También tengo experiencia impartiendo cursos de computación y
+              orientando a usuarios en el uso de herramientas digitales.
+            </p>
+            <p style="margin-top: 14px;">
+              Busco continuar desarrollándome profesionalmente en áreas de
+              desarrollo web, sistemas, soporte técnico e implementación de TI.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Formación académica</h3>
+
+            <div class="education-item">
+              <strong>Ingeniería en Desarrollo y Gestión de Software</strong>
+              <span>Universidad Tecnológica de la Selva · 2024–2026</span>
+            </div>
+
+            <div class="education-item">
+              <strong>
+                TSU en Tecnologías de la Información, Área Desarrollo de
+                Software Multiplataforma
+              </strong>
+              <span>Universidad Tecnológica de la Selva · 2022–2024</span>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="habilidades">
-    <div class="section-inner">
-      <h2 class="section-title">Habilidades técnicas</h2>
-      <p class="section-intro">
-        Tecnologías y herramientas que forman parte de mi experiencia.
-      </p>
+    <section id="experiencia">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Trayectoria</span>
+          <h2 class="section-title">Experiencia profesional</h2>
+          <p>
+            Experiencia en desarrollo web, soporte técnico, instalación
+            de equipos y acompañamiento a usuarios.
+          </p>
+        </div>
 
-      <div class="skills">
-        <span class="skill">HTML</span>
-        <span class="skill">CSS</span>
-        <span class="skill">JavaScript</span>
-        <span class="skill">PHP</span>
-        <span class="skill">Python</span>
-        <span class="skill">Flask</span>
-        <span class="skill">MySQL</span>
-        <span class="skill">Git</span>
-        <span class="skill">Microsoft Excel</span>
-        <span class="skill">Soporte técnico</span>
-        <span class="skill">Desarrollo web</span>
-        <span class="skill">Capacitación informática</span>
+        <div class="experience">
+          <article class="experience-card">
+            <div class="experience-top">
+              <div>
+                <h3>Desarrollo web y soporte técnico TI</h3>
+                <p class="company">TecnologíaSIE · Saltillo, Coahuila</p>
+              </div>
+              <span class="date">Experiencia de 2 años</span>
+            </div>
+
+            <ul>
+              <li>Desarrollo, diseño, mantenimiento y actualización de páginas web.</li>
+              <li>Instalación y configuración de computadoras, impresoras y periféricos.</li>
+              <li>Configuración y soporte de puntos de venta, cajas de cobro y equipos de autocobro.</li>
+              <li>Instalación y configuración de relojes checadores y dispositivos biométricos.</li>
+              <li>Soporte remoto mediante herramientas como AnyDesk.</li>
+              <li>Pruebas funcionales, detección de incidencias y seguimiento de soluciones.</li>
+              <li>Validación básica de redes, conectividad y equipos tecnológicos.</li>
+              <li>Impartición de cursos de computación y orientación a usuarios.</li>
+              <li>Control de inventario, documentación de actividades y coordinación de equipos.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card">
+            <div class="experience-top">
+              <div>
+                <h3>Prácticas profesionales — Desarrollo web</h3>
+                <p class="company">BienDIG · Proyecto TourAgency</p>
+              </div>
+              <span class="date">Mayo–agosto 2024</span>
+            </div>
+
+            <ul>
+              <li>Mantenimiento y actualización de un sitio web de agencia de viajes.</li>
+              <li>Apoyo en la configuración y el soporte de la plataforma.</li>
+              <li>Actualización de descripciones de productos y contenidos.</li>
+              <li>Apoyo en redes sociales y seguimiento de incidencias.</li>
+            </ul>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contacto" class="white-section">
-    <div class="section-inner">
-      <div class="contact-box">
-        <h2 class="section-title">¿Trabajamos juntos?</h2>
-        <p class="section-intro">
-          Estoy interesada en nuevas oportunidades profesionales
-          relacionadas con desarrollo web y tecnología.
-          Puedes contactarme por correo electrónico.
-        </p>
-        <a class="button"
-           href="mailto:jani.zambrano.2004@gmail.com">
-          Enviar correo
-        </a>
+    <section id="proyectos">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Mi trabajo</span>
+          <h2 class="section-title">Proyectos y sitios relacionados</h2>
+          <p>
+            Una selección de proyectos y sitios vinculados con mi experiencia
+            tecnológica.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <span class="project-number">PROYECTO 01</span>
+            <h3>Sistema web de punto de venta</h3>
+            <p>
+              Aplicación web para acceder a un sistema de punto de venta.
+              Puedes consultar el proyecto en el enlace disponible.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Desarrollo web</span>
+              <span class="tag">Punto de venta</span>
+              <span class="tag">Sistemas</span>
+            </div>
+
+            <a
+              class="button"
+              href="https://punto-venta-web.onrender.com/Login"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Abrir proyecto ↗
+            </a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">PROYECTO 02</span>
+            <h3>WorkLink — Plataforma de empleo</h3>
+            <p>
+              Proyecto web orientado a conectar a personas que buscan empleo
+              con empresas que publican vacantes.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Flask</span>
+              <span class="tag">Python</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Desarrollo web</span>
+            </div>
+
+            <a
+              class="button"
+              href="https://github.com/JaniletPP"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver en GitHub ↗
+            </a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">EXPERIENCIA TÉCNICA</span>
+            <h3>Soluciones de control de asistencia</h3>
+            <p>
+              Experiencia relacionada con relojes checadores, dispositivos
+              biométricos y soluciones de control de asistencia empresarial.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Soporte TI</span>
+              <span class="tag">Biometría</span>
+              <span class="tag">Implementación</span>
+            </div>
+
+            <a
+              class="button"
+              href="https://tecnologiasie.com/html/reloj.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visitar sitio ↗
+            </a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">CÓDIGO Y REPOSITORIOS</span>
+            <h3>Mi perfil de GitHub</h3>
+            <p>
+              Consulta mis repositorios y proyectos de programación para
+              conocer más sobre mi trabajo.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Git</span>
+              <span class="tag">Python</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+            </div>
+
+            <a
+              class="button"
+              href="https://github.com/JaniletPP"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver GitHub ↗
+            </a>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="habilidades">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Tecnologías y capacidades</span>
+          <h2 class="section-title">Mis habilidades</h2>
+          <p>
+            Competencias técnicas y personales que aplico en proyectos
+            de desarrollo y actividades de soporte.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <div class="skill-icon">&lt;/&gt;</div>
+            <h3>Desarrollo web</h3>
+            <p>HTML, CSS, JavaScript, diseño y mantenimiento de páginas web.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">Py</div>
+            <h3>Programación y bases de datos</h3>
+            <p>Python, Flask, PHP, MySQL y gestión básica de bases de datos.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">IT</div>
+            <h3>Soporte técnico</h3>
+            <p>Instalación de software y hardware, diagnóstico y solución de incidencias.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">POS</div>
+            <h3>Implementación de sistemas</h3>
+            <p>Configuración de puntos de venta, periféricos y dispositivos biométricos.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">01</div>
+            <h3>Herramientas digitales</h3>
+            <p>Microsoft Word, Excel, PowerPoint, Gmail, PDF y Git.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">↗</div>
+            <h3>Habilidades personales</h3>
+            <p>Comunicación, trabajo en equipo, organización, adaptación y aprendizaje continuo.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">EDU</div>
+            <h3>Capacitación de usuarios</h3>
+            <p>Impartición de cursos de computación y explicación de procedimientos paso a paso.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">QA</div>
+            <h3>Pruebas y documentación</h3>
+            <p>Pruebas funcionales, registro de incidencias y elaboración de evidencias.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">NET</div>
+            <h3>Infraestructura TI</h3>
+            <p>Validación básica de conectividad, redes y equipos tecnológicos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contacto">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Hablemos</span>
+          <h2 class="section-title">¿Trabajamos juntos?</h2>
+          <p>
+            Estoy interesada en nuevas oportunidades profesionales
+            relacionadas con desarrollo de software, desarrollo web y soporte TI.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div>
+            <h3>Janilet Pérez Pérez</h3>
+            <p>Correo: jani.zambrano.2004@gmail.com</p>
+            <p>GitHub: github.com/JaniletPP</p>
+          </div>
+
+          <div class="buttons">
+            <a
+              class="button"
+              href="mailto:jani.zambrano.2004@gmail.com?subject=Oportunidad%20laboral"
+            >
+              Enviarme un correo ↗
+            </a>
+
+            <a
+              class="button button-outline"
+              href="https://github.com/JaniletPP"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Mi GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    Portafolio profesional · Desarrollo web y tecnología
+    <div class="container">
+      <p>© <span id="year"></span> Janilet Pérez Pérez · Portafolio profesional</p>
+    </div>
   </footer>
 
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
