@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio profesional de desarrollo web, programación y soporte tecnológico.">
+  <title>Portafolio | Desarrolladora Web</title>
+
+  <style>
+    :root {
+      --azul: #2563eb;
+      --oscuro: #172033;
+      --gris: #64748b;
+      --fondo: #f7f9fc;
+      --blanco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--fondo);
+      color: var(--oscuro);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: var(--blanco);
+      border-bottom: 1px solid #e5eaf2;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--azul);
+    }
+
+    nav a {
+      color: var(--oscuro);
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: auto;
+      padding: 90px 24px 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .tag {
+      color: var(--azul);
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 55px);
+      line-height: 1.15;
+      margin: 18px 0;
+      letter-spacing: -1.5px;
+    }
+
+    h1 span {
+      color: var(--azul);
+    }
+
+    .hero p {
+      color: var(--gris);
+      max-width: 590px;
+      margin-bottom: 25px;
+    }
+
+    .photo {
+      width: 260px;
+      height: 310px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 24px;
+      background: #e1e9f8;
+      border: 6px solid var(--blanco);
+      box-shadow: 0 15px 40px #17203318;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--azul);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 9px;
+      font-weight: bold;
+      margin: 5px 8px 5px 0;
+    }
+
+    .button.secondary {
+      background: white;
+      color: var(--azul);
+      border: 1px solid #cbd5e1;
+    }
+
+    section {
+      padding: 65px 24px;
+      scroll-margin-top: 25px;
+    }
+
+    .section-inner {
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .section-intro {
+      color: var(--gris);
+      margin-bottom: 30px;
+    }
+
+    .white-section {
+      background: white;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      padding: 26px;
+      background: white;
+      border: 1px solid #e5eaf2;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px #17203308;
+    }
+
+    .white-section .card {
+      background: var(--fondo);
+    }
+
+    .project-number {
+      color: var(--azul);
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: var(--gris);
+      margin-bottom: 16px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: #eaf1ff;
+      color: #214eb5;
+      padding: 8px 13px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .contact-box {
+      background: #edf3ff;
+      padding: 32px;
+      border-radius: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: var(--gris);
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        padding: 18px 5%;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 10px 0 0;
+      }
+
+      .hero {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        padding-top: 45px;
+      }
+
+      .photo {
+        width: 190px;
+        height: 220px;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#" class="logo">Mi portafolio.</a>
+    <div>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="sobre-mi">
+    <div class="hero-text">
+      <span class="tag">PORTAFOLIO PROFESIONAL</span>
+      <h1>Hola, soy una <span>desarrolladora web.</span></h1>
+
+      <p>
+        Ingeniera en Desarrollo y Gestión de Software con experiencia
+        en desarrollo de páginas web, programación, bases de datos,
+        soporte técnico e impartición de cursos de informática.
+        Me interesa crear soluciones tecnológicas útiles y seguir
+        creciendo profesionalmente.
+      </p>
+
+      <a class="button" href="#proyectos">Ver mis proyectos</a>
+      <a class="button secondary" href="#contacto">Contactarme</a>
+    </div>
+
+    <img
+      class="photo"
+      src="foto-profesional.jpg"
+      alt="Fotografía profesional"
+    >
+  </header>
+
+  <section id="proyectos" class="white-section">
+    <div class="section-inner">
+      <h2 class="section-title">Mis proyectos</h2>
+      <p class="section-intro">
+        Algunos de los proyectos que quiero compartir.
+      </p>
+
+      <div class="projects">
+        <article class="card">
+          <span class="project-number">PROYECTO 01</span>
+          <h3>Sistema de punto de venta web</h3>
+          <p>
+            Aplicación web de punto de venta. Consulta la demostración
+            para conocer el sistema y sus funcionalidades.
+          </p>
+          <a class="button"
+             href="https://punto-venta-web.onrender.com/Login"
+             target="_blank" rel="noopener noreferrer">
+            Ver proyecto ↗
+          </a>
+        </article>
+
+        <article class="card">
+          <span class="project-number">PROYECTO 02</span>
+          <h3>Proyecto adicional</h3>
+          <p>
+            Proyecto complementario de mi portafolio.
+            Próximamente agregaré una descripción detallada
+            de su objetivo, funcionalidades y tecnologías.
+          </p>
+          <a class="button"
+             href="https://share.google/t8Y7fvJRYorS2vgfp"
+             target="_blank" rel="noopener noreferrer">
+            Consultar proyecto ↗
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="habilidades">
+    <div class="section-inner">
+      <h2 class="section-title">Habilidades técnicas</h2>
+      <p class="section-intro">
+        Tecnologías y herramientas que forman parte de mi experiencia.
+      </p>
+
+      <div class="skills">
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">PHP</span>
+        <span class="skill">Python</span>
+        <span class="skill">Flask</span>
+        <span class="skill">MySQL</span>
+        <span class="skill">Git</span>
+        <span class="skill">Microsoft Excel</span>
+        <span class="skill">Soporte técnico</span>
+        <span class="skill">Desarrollo web</span>
+        <span class="skill">Capacitación informática</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="white-section">
+    <div class="section-inner">
+      <div class="contact-box">
+        <h2 class="section-title">¿Trabajamos juntos?</h2>
+        <p class="section-intro">
+          Estoy interesada en nuevas oportunidades profesionales
+          relacionadas con desarrollo web y tecnología.
+          Puedes contactarme por correo electrónico.
+        </p>
+        <a class="button"
+           href="mailto:jani.zambrano.2004@gmail.com">
+          Enviar correo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Portafolio profesional · Desarrollo web y tecnología
+  </footer>
+
+</body>
+</html>
